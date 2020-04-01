@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+
+        // // Contexto global (window)
+        // const win = this
+        // console.log({ win })
+
+
+        // // Contexto de una función (window)
+        // function whatever() {
+        //     console.log(this)
+        // }
+        // whatever()
+
+
+
+
+        // const person = {
+        //     age: 33,
+        //     weight: 88,
+        //     walk1() {
+        //         setInterval(function () {
+        //             this.weight -= .1       // OPS! this apunta a window
+        //             console.log('La persona pesa', this.weight)
+        //         }, 1000)
+        //     },
+        //     walk2() {
+        //         let that = this             // Forbidden
+        //         setInterval(function () {
+        //             that.weight -= .1
+        //             console.log('La persona pesa', that.weight)
+        //         }, 1000)
+        //     },
+        //     walk3() {
+        //         setInterval(function () {
+        //             this.weight -= .1
+        //             console.log('La persona pesa', this.weight)
+        //         }.bind(this), 1000)     // .bind() es un método de funciones que reorienta su contexto
+        //     },
+        //     walk4() {
+        //         setInterval(() => {     // Las arrow function no reorientan el contexto
+        //             this.weight -= .1
+        //             console.log('La persona pesa', this.weight)
+        //         }, 1000)
+        //     }
+        // }
+
+        // // person.walk1()
+        // // person.walk2()
+        // // person.walk3()
+        // person.walk4()
+
+
+
+        // // Objeto arguments
+        // function showAllCharacters() {
+        //     const argsCopy = [...arguments]
+        //     argsCopy.forEach(elm => console.log('---', elm))
+        // }
+
+        // showAllCharacters('Pano Donald', 'Minnie', 'Goofie', 'Mulán', 'Rompe Ralph')
+
+
+
+
+        // REST parameters
+        function showMoviesDetails(title, director, year, ...characters) {
+            console.log('La pelicula', title, ' es del año ', year, 'y salen', characters)
+        }
+
+        showMoviesDetails('Campamento Flippy', 'Flippy', 2003, 'Flippy', 'Macarena', 'Sofi')
+
+
+    </script>
+</body>
+
+</html>

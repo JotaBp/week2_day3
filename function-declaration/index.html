@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+</head>
+
+<body>
+
+    <script>
+
+        // Function statement
+        function saiHi() {
+            console.log('hi')
+        }
+
+        [1, 2].forEach(function (elm) {
+            console.log(elm)
+        })
+
+        // Function expression
+        const myFn = () => console.log("Hi")
+
+        // Function global object constructor 
+        var test3 = new Function('a', 'b', 'return a + b');
+
+
+
+
+        // Functions as FCO
+
+        // FCO: Functions as vaeriables
+        const applyNormatVat = subtotal => console.log("El subtotal del presupuesto 1 es", subtotal * 1.21)
+        const applyReducedVat = subtotal => console.log("El subtotal del presupuesto 1 es", subtotal * 1.1)
+        const applyExentVat = subtotal => console.log("El subtotal del presupuesto 1 es", subtotal)
+
+
+        // FCO: Functions as values
+        const getTotal = (cost, action) => {
+            const benefit = cost * 1.1
+            const subtotal = cost + benefit
+
+            action(subtotal)    // Invocación
+        }
+
+        const estimate1 = getTotal(100, applyNormatVat)
+
+
+
+        // FCO: Functions anonym
+        [1, 2, 3, 4].forEach(function (elm) {
+            console.log(elm * 2)
+        })
+
+
+
+
+    </script>
+</body>
+
+</html>
